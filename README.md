@@ -108,33 +108,60 @@ Banco
 SQL Server
 
 pedido-produtos/
-├─ src/main/java/com/madson/pedidoprodutos/
+├─ pom.xml
+├─ src/main/java/pedidoprodutos/
 │  ├─ PedidoProdutosApplication.java
 │  ├─ domain/
 │  │  ├─ entities/
+│  │  │  ├─ Product.java
+│  │  │  ├─ Order.java
+│  │  │  └─ OrderItem.java
 │  │  ├─ enums/
+│  │  │  └─ OrderStatus.java
 │  │  └─ exceptions/
+│  │     ├─ DomainException.java
+│  │     └─ NotFoundException.java
 │  ├─ application/
-│  │  ├─ ports/
-│  │  │  ├─ in/
-│  │  │  └─ out/
-│  │  ├─ services/
-│  │  └─ dto/
+│  │  ├─ ports/out/
+│  │  │  ├─ ProductRepositoryPort.java
+│  │  │  └─ OrderRepositoryPort.java
+│  │  └─ services/
+│  │     ├─ ProductService.java
+│  │     └─ OrderService.java
 │  ├─ adapters/
 │  │  ├─ web/
 │  │  │  ├─ controllers/
+│  │  │  │  ├─ ProductController.java
+│  │  │  │  └─ OrderController.java
 │  │  │  ├─ requests/
+│  │  │  │  ├─ CreateProductRequest.java
+│  │  │  │  ├─ UpdateProductRequest.java
+│  │  │  │  ├─ CreateOrderRequest.java
+│  │  │  │  ├─ CreateOrderItemRequest.java
+│  │  │  │  └─ UpdateOrderStatusRequest.java
 │  │  │  ├─ responses/
-│  │  │  ├─ mappers/
+│  │  │  │  ├─ ProductResponse.java
+│  │  │  │  ├─ OrderResponse.java
+│  │  │  │  └─ OrderItemResponse.java
 │  │  │  └─ exceptionhandler/
+│  │  │     └─ ApiExceptionHandler.java
 │  │  └─ persistence/
 │  │     ├─ jpa/
 │  │     │  ├─ entities/
-│  │     │  ├─ repositories/
-│  │     │  └─ mappers/
+│  │     │  │  ├─ ProductJpaEntity.java
+│  │     │  │  ├─ OrderJpaEntity.java
+│  │     │  │  └─ OrderItemJpaEntity.java
+│  │     │  └─ repositories/
+│  │     │     ├─ ProductJpaRepository.java
+│  │     │     └─ OrderJpaRepository.java
 │  │     └─ adapters/
+│  │        ├─ ProductRepositoryAdapter.java
+│  │        └─ OrderRepositoryAdapter.java
 │  └─ config/
-├─ src/main/resources/
-│  ├─ application.yml
-│  └─ db/migration/
-└─ pom.xml
+│     └─ BeanConfig.java
+└─ src/main/resources/
+   ├─ application.yml
+   └─ db/migration/
+      ├─ V1__create_tables.sql
+      └─ V2__seed_products.sql
+
