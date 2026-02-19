@@ -1,0 +1,9 @@
+pedidoprodutos\adapters\web\responses\OrderItemResponse.class
+pedidoprodutos\adapters\web\responses\OrderResponse.class
+pedidoprodutos\adapters\web\requests\UpdateOrderStatusRequest.class
+pedidoprodutos\adapters\web\requests\UpdateProductRequest.class
+pedidoprodutos\adapters\web\responses\ProductResponse.class
+pedidoprodutos\application\services\OrderService$CreateItem.class
+pedidoprodutos\adapters\web\requests\CreateOrderRequest.class
+pedidoprodutos\adapters\web\requests\CreateProductRequest.class
+pedidoprodutos\adapters\web\requests\CreateOrderItemRequest.class
